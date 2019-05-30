@@ -48,6 +48,7 @@ const listar = () => {
 	}
 }
 
+//Función para almacenar en archivo
 const guardar = () => {
 	let datos = JSON.stringify(listaEstudiantes);
 	fs.writeFile('listado.json', datos, (err)=>{
@@ -56,6 +57,24 @@ const guardar = () => {
 	})
 }
 
+//Función para mostrar listado
+const mostrar = () => {
+	
+	//Cargo el listado
+	listar();
+	console.log('Notas de los estudiantes')
+
+	//Recorro estudiantes y los muestro
+	listaEstudiantes.forEach(estudiante => {
+		console.log(estudiante.nombre);
+		console.log('Notas');
+		console.log('Matemáticas: ' + estudiante.matematicas);
+		console.log('Inglés: ' + estudiante.ingles);
+		console.log('Programación: ' + estudiante.programacion + '\n');
+	});
+}
+
 module.exports = {
-	crear
+	crear,
+	mostrar
 }

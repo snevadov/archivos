@@ -11,7 +11,27 @@ const funciones = require('./funciones');
 
 let comando = argv._[0];
 
+/* -------------- VERSION 1
+//Se quita debido a que un Switch es más eficiente
+
 //Llamo la función dependiendo del valor
 if (argv._[0] == 'crear'){
 	funciones.crear(argv);
+}*/
+
+/* --------------- VERSION 2
+*/
+
+switch (comando){
+
+	case 'crear':
+		funciones.crear(argv);
+		break;
+
+	case 'mostrar':
+		funciones.mostrar();
+		break;
+
+	default:
+		console.log('No ingresó una función existente');
 }

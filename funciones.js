@@ -147,10 +147,32 @@ const actualizar = (nombre, asignatura, calificacion) => {
 	}
 }
 
+//Función para eliminar un estudiante
+const eliminar = (nombre) => {
+	//Cargo el listado
+	listar();
+
+	//Busco un estudiante
+	let nuevo = listaEstudiantes.filter(mat => mat.nombre != nombre);
+	
+	//Muestro error si no encuentra el estudiante
+	if(nuevo.length == listaEstudiantes.length)
+	{
+		console.log("Ningún estudiante tiene el nombre indicado");
+	}
+	else
+	{
+		//Actualizo los estudiantes
+		listaEstudiantes = nuevo;
+		guardar()
+	}
+}
+
 module.exports = {
 	crear,
 	mostrar,
 	mostrarest,
 	mostrarmat,
-	actualizar
+	actualizar,
+	eliminar
 }

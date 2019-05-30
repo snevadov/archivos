@@ -44,6 +44,10 @@ const actualiza = {
 	}
 }
 
+const elimina = {
+	nombre
+}
+
 //manejo de yargs
 const argv = require('yargs')
 	.command('crear','Crear un estudiante', creacion)
@@ -51,6 +55,7 @@ const argv = require('yargs')
 	.command('mostrarest','Muestra el estudiante y sus notas', muestraest)
 	.command('mostrarmat','Muestra estudiantes que ganan')
 	.command('actualizar','Actualiza información de un curso', actualiza)
+	.command('eliminar','Elimina un estudiante', elimina)
 	.argv;
 
 //permito exportación de la función y la constante

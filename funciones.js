@@ -126,9 +126,31 @@ const mostrarmat = () => {
 	
 }
 
+//Función para actualizar información de un curso
+const actualizar = (nombre, asignatura, calificacion) => {
+
+	//Cargo el listado
+	listar();
+
+	//Busco un estudiante
+	let encontrado = listaEstudiantes.find(buscar => buscar.nombre == nombre);
+	
+	//Si no lo encuentro, muestro error
+	if(!encontrado)
+	{
+		console.log("No existe el estudiante con ese nombre");
+	}
+	else
+	{
+		encontrado[asignatura] = calificacion;
+		guardar();
+	}
+}
+
 module.exports = {
 	crear,
 	mostrar,
 	mostrarest,
-	mostrarmat
+	mostrarmat,
+	actualizar
 }

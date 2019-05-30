@@ -40,6 +40,10 @@ switch (comando){
 		funciones.mostrarmat();
 		break;
 
+	case 'actualizar':
+		funciones.actualizar(argv.nombre, argv.asignatura, argv.calificacion);
+		break;
+
 	default:
 		console.log('No ingresó una función existente');
 }

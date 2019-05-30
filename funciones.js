@@ -74,7 +74,33 @@ const mostrar = () => {
 	});
 }
 
+//Función para mostrar un estudiante
+const mostrarest = (nom) => {
+	
+	//Cargo el listado
+	listar();
+
+	//Busco un estudiante
+	let est = listaEstudiantes.find(buscar => buscar.nombre == nom);
+	
+	//Si no lo encuentro, muestro error
+	if(!est)
+	{
+		console.log("No existe el estudiante con ese nombre");
+	}
+	else
+	{
+		console.log(est.nombre);
+		console.log('Notas');
+		console.log('Matemáticas: ' + est.matematicas);
+		console.log('Inglés: ' + est.ingles);
+		console.log('Programación: ' + est.programacion + '\n');
+	}
+	
+}
+
 module.exports = {
 	crear,
-	mostrar
+	mostrar,
+	mostrarest
 }

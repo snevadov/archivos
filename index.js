@@ -32,6 +32,10 @@ switch (comando){
 		funciones.mostrar();
 		break;
 
+	case 'mostrarest':
+		funciones.mostrarest(argv.nombre);
+		break;
+
 	default:
 		console.log('No ingresó una función existente');
 }

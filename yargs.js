@@ -28,10 +28,15 @@ const creacion = {
 	programacion
 }
 
+const muestraest = {
+	nombre
+}
+
 //manejo de yargs
 const argv = require('yargs')
 	.command('crear','Crear un estudiante', creacion)
 	.command('mostrar','Muestra el estudiante y sus notas')
+	.command('mostrarest','Muestra el estudiante y sus notas', muestraest)
 	.argv;
 
 //permito exportación de la función y la constante

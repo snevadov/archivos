@@ -36,6 +36,10 @@ switch (comando){
 		funciones.mostrarest(argv.nombre);
 		break;
 
+	case 'mostrarmat':
+		funciones.mostrarmat();
+		break;
+
 	default:
 		console.log('No ingresó una función existente');
 }

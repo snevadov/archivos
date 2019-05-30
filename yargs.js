@@ -37,6 +37,7 @@ const argv = require('yargs')
 	.command('crear','Crear un estudiante', creacion)
 	.command('mostrar','Muestra el estudiante y sus notas')
 	.command('mostrarest','Muestra el estudiante y sus notas', muestraest)
+	.command('mostrarmat','Muestra estudiantes que ganan')
 	.argv;
 
 //permito exportación de la función y la constante

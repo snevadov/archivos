@@ -99,8 +99,36 @@ const mostrarest = (nom) => {
 	
 }
 
+
+//Función para mostrar estudiantes que ganaron matemáticas
+const mostrarmat = () => {
+	
+	//Cargo el listado
+	listar();
+
+	//Busco un estudiante
+	let ganan = listaEstudiantes.filter(mat => mat.matematicas >= 3);
+	
+	//Muestro error si ganan y si pierden
+	if(ganan.length == 0)
+	{
+		console.log("Ningún estudiante va ganando matemáticas");
+	}
+	else
+	{
+		//Recorro estudiantes y los muestro
+		ganan.forEach(estudiante => {
+			console.log(estudiante.nombre);
+			console.log('Notas');
+			console.log('Matemáticas: ' + estudiante.matematicas);
+		});
+	}
+	
+}
+
 module.exports = {
 	crear,
 	mostrar,
-	mostrarest
+	mostrarest,
+	mostrarmat
 }
